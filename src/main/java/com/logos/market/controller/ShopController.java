@@ -27,6 +27,23 @@ public class ShopController {
     private ShopResponseDTO get(@PathVariable("id") Long id){
         return new ShopResponseDTO(shopService.getById(id));
     }
+    @PutMapping("/{id}")
+    private ShopResponseDTO update(@RequestBody ShopRequestDTO shop, @PathVariable("id") Long id) {
+        return new ShopResponseDTO(shopService.update(shop, id));
+    }
+
+    @DeleteMapping("/{id}")
+    private void delete(@PathVariable("id") Long id) {
+        shopService.delete(id);
+    }
+
+    @GetMapping()
+    private List<ShopResponseDTO> getAll() {
+        return shopService.getAll()
+                .stream()
+                .map(ShopResponseDTO::new)
+                .collect(Collectors.toList());
+    }
 
     @GetMapping("/category/{categoryId}")
     private List<ShopResponseDTO> getAllByCategory(@PathVariable("categoryId") Long id){

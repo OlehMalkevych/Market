@@ -26,6 +26,7 @@ public class User {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Cart cart;
 
-
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
 }
 

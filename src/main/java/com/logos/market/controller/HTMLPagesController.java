@@ -18,5 +18,4 @@ public class HTMLPagesController {
 		return "/html/admin-shop.html";
 	}
 
-
 }

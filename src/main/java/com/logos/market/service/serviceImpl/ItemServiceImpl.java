@@ -1,4 +1,4 @@
-package com.logos.market.service.ServiceImpl;
+package com.logos.market.service.serviceImpl;
 
 import com.logos.market.domain.Item;
 import com.logos.market.dto.request.ItemRequestDTO;

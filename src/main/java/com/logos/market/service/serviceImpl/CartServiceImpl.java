@@ -1,4 +1,4 @@
-package com.logos.market.service.ServiceImpl;
+package com.logos.market.service.serviceImpl;
 
 import com.logos.market.domain.Cart;
 import com.logos.market.domain.Item;

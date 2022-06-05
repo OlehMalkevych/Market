@@ -32,4 +32,7 @@ public class Shop {
     @ManyToMany(mappedBy = "shops", fetch = FetchType.LAZY)
     private Set<Category> categories = new HashSet<>();
 
+    @Enumerated(EnumType.STRING)
+    private EntityStatus entityStatus = EntityStatus.ACTIVE;
+
 }

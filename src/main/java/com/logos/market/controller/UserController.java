@@ -1,9 +1,10 @@
 package com.logos.market.controller;
 
 
-import com.logos.market.dto.request.UserRequestDTO;
+import com.logos.market.dto.request.UserRegistrationRequestDTO;
+import com.logos.market.dto.response.AuthenticationResponseDTO;
 import com.logos.market.dto.response.UserResponseDTO;
-import com.logos.market.service.ServiceImpl.UserServiceImpl;
+import com.logos.market.service.serviceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,8 @@ public class UserController {
 
 	//	// localhost:8080/users/register
 	@PostMapping("/register")
-	public UserResponseDTO registerUser(@RequestBody UserRequestDTO requestDTO) {
-		return new UserResponseDTO(userServiceImpl.registerUser(requestDTO));
+	public AuthenticationResponseDTO registerUser(@RequestBody UserRegistrationRequestDTO requestDTO) {
+		return userServiceImpl.registerUser(requestDTO);
 	}
 
 }
