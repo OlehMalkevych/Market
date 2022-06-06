@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    color: #ced4d4;
+    outline: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    background: #eeedc4;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+input, textarea {
+    margin: 5px 0;
+    font-size:  13px;
+    resize: none;
+    width: 100%;
+    background: #483C46;
+    border: none;
+    outline: none;
+    padding: 5px 0 5px 5px;
+}
+
+input {
+    border-bottom: 1px solid #3C6E71;
+}
+
+.linear-input {
+    width: 300px;
+}
+
+select {
+    background: none;
+    border: 2px solid #3C6E71;
+}
+
+option {
+    background: #141f1f;
+}
+
+textarea {
+    border-top: 1px solid #3C6E71;
+    border-bottom: 1px solid #3C6E71;
+    /*border-radius: 2px;*/
+}
+
+::placeholder {
+    color: #9fa0a0;
+}
+
+tr {
+    border-bottom: 1px solid #3C6E71;
+}
+
+th, td {
+    padding: 5px 15px;
+}
+
+button {
+    padding: 5px 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: #565555;
+
+    color: #efeded;
+    font-weight: 500;
+}
+
+.create-btn {
+    border: 2px solid #EEEBBF;
+    /*border-radius: 5px;*/
+    color: #EEEBBF;
+    /*background: #3E7CB1;*/
+    background: none;
+}
+
+.create-btn-dark {
+    border: 2px solid #483C46;
+    /*border-radius: 5px;*/
+    color: #483C46;
+    /*background: #3E7CB1;*/
+    background: none;
+}
+
+.create-btn:hover {
+    /*background:  #1a65a0*/
+}
+
+.edit-btn {
+    background: none;
+    border: 2px solid #77A6CF;
+    color: #77A6CF;
+    font-weight: 500;
+}
+
+.edit-btn:hover {
+    /*background: rgb(93, 175, 205);*/
+}
+
+
+.dark-btn {
+    background: none;
+}
+
+.dark-btn:hover {
+    /*background: #5d5b5b;*/
+}
+
+.right-content {
+    text-align: right;
+    padding-right: 0;
+}
+
+.left-content {
+    text-align: left;
+    padding-left: 0;
+}
+
+.details-link {
+    text-decoration: none;
+    font-weight: 400;
+    color: #EEEBBF;
+}
+
+.details-link:hover {
+    color: #b1aeae;
+}
+
+.content-container {
+    margin: 10px 30px;
+    padding: 20px;
+    border-radius: 4px;
+    background: #483C46;
+    box-shadow: -5px 5px 1rem 0 #7c7c6c;
+}
+
+.auto-center-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small-container {
+    width: 25%;
+}
+
+.section-header {
+    font-size: 16px;
+    color: #efecec;
+    font-weight: 300;
+
+    margin: 5px 0;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.half-section {
+    width: 50%;
+    margin: 10px;
+}
+
+.half-section:first-child {
+    margin-left: 30px;
+}
+
+.half-section:last-child {
+    margin-right: 30px;
+}
+
+.section-element {
+    padding-bottom: 15px
+    /*display: ;*/
+}
+
+.vertical-center{
+    align-items: center;
+}
+
+.horizontal-center {
+    justify-content: center;
+}
+
+.horizontal-space-between {
+    justify-content: space-between;
+}
+
+.hor-space {
+    margin: 0 10px;
+}
+
+.ver-space {
+    margin: 10px  0;
+}
+
+.left-inner-space {
+    padding-left: 10px;
+}
+
+.left-space {
+    margin-left: 10px;
+}
+
+.id-text {
+    font-size: 10px;
+    font-weight: 300;
+    color: #838383;
+}
+
+.shop-name-header {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.page-btn {
+    border: 1px solid #efeded;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 0 10px;
+}
+
+.page-btn:hover {
+    background: #a49f9f;
+}
+
+.page-btn:disabled {
+    background-color: #827880;
+    cursor: default;
+}
+
+.page-btn:disabled:hover  {
+    background-color: #827880;
+}
+
+.category-wrapped {
+    border: 2px solid #EEEBBF;
+    /*background-color: #EEEBBF;*/
+
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    font-size: 11px;
+    font-weight: 600;
+    color: #EEEBBF;
+    /*color: #483C46;*/
+    margin: 0 5px;
+
+}
+
+.category-wrapped:last-child {
+    margin-right: 15px;
+}
+
+.check-element {
+    color: inherit;
+}
+
+.checkbox-label {
+    color: inherit;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.check-input {
+    width: 10px;
+}
+
+.plates-holder {
+    width: 80%;
+    margin: 20px auto;
+    /*flex-wrap: wrap;*/
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+.plates-holder::after {
+    content: "";
+    flex: 0 32%;
+}
+
+.shop-plate {
+    background: #483C46;
+    border-radius: 10px;
+
+    flex: 0 32%;
+    height: 100px;
+    margin-bottom: 2%;
+
+    padding: 10px;
+}
+
+.shop-plate-name {
+    text-align: center;
+    font-size: 17px;
+}

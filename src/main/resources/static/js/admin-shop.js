@@ -94,7 +94,7 @@ const appendShopsTable = () => {
 
 const appendShopToTable = (shop) => {
     let table = document.getElementById('shops-table');
-    let url = 'http://localhost:8080/admin/shop-manage/' + shop.id;
+    let url = 'http://localhost:8080/admin/shop-manage?shopId=' + shop.id;
 
     table.innerHTML = table.innerHTML +
         `<tr>

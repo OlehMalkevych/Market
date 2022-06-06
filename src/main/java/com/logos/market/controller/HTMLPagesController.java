@@ -19,8 +19,19 @@ public class HTMLPagesController {
 		return "/html/admin-shop.html";
 	}
 
-	@RequestMapping("/admin/shop-manage/{shopId}")
+	@RequestMapping("/admin/shop-manage")
 	private String getAdminShopManagePage() {
 		return "/html/admin-shop-manage.html";
 	}
+
+	@RequestMapping("/registration")
+	private String getUserRegistrationPage() {
+		return "/html/user-registration.html";
+	}
+
+	@RequestMapping("/login")
+	private String getLoginPage() {
+		return "/html/login.html";
+	}
+
 }

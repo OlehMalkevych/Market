@@ -1,6 +1,7 @@
 package com.logos.market.controller;
 
 
+import com.logos.market.dto.request.UserLoginRequestDTO;
 import com.logos.market.dto.request.UserRegistrationRequestDTO;
 import com.logos.market.dto.response.AuthenticationResponseDTO;
 import com.logos.market.dto.response.UserResponseDTO;
@@ -24,6 +25,11 @@ public class UserController {
 	@PostMapping("/register")
 	public AuthenticationResponseDTO registerUser(@RequestBody UserRegistrationRequestDTO requestDTO) {
 		return userServiceImpl.registerUser(requestDTO);
+	}
+
+	@PostMapping("/login")
+	public AuthenticationResponseDTO login(@RequestBody UserLoginRequestDTO requestDTO) {
+		return userServiceImpl.login(requestDTO);
 	}
 
 }

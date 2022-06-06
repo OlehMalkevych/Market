@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Shop manage</title>
+    <link rel="stylesheet" href="../styles/admin-shop-manage.css">
 </head>
 <body>
 <div>
@@ -12,6 +13,37 @@
 <div id="items-container">
 
 </div>
+<div id="page-navigation-container">
+    <button id="prev-page-button"><</button>
+    <label id="page-number-label">0</label>
+    <button id="next-page-button">></button>
+    <div>
+        <select id="sort-field-select" name="">
+            <option selected value="&pagination.field=name&pagination.direction=ASC">Name (A-Z)</option>
+            <option selected value="&pagination.field=name&pagination.direction=DESC">Name (Z-A)</option>
+            <option selected value="&pagination.field=price&pagination.direction=ASC">Price (from less to bigger)</option>
+            <option selected value="&pagination.field=price&pagination.direction=DESC">Price (from bigger to less)</option>
+            <option selected value="">default</option>
+        </select>
+    </div>
+</div>
+<div>
+    <div>
+        <input type="text" id="item-name-input" placeholder="item name">
+    </div>
+    <div>
+        <input type="number" id="item-price-input" placeholder="item price">
+    </div>
+    <div>
+        <input type="number" id="item-count-input" placeholder="item count">
+    </div>
+    <div>
+        <textarea id="item-description-input" name="" id="" cols="30" rows="10" placeholder="item description"></textarea>
+    </div>
+    <div>
+        <button id="create-item-button">Create</button>
+    </div>
+</div>
 </body>
-<script type="module" src="../js/admin-shop-manage.js"></script>
+<script type="module" src="../../js/admin-shop-manage.js"></script>
 </html>
