@@ -94,13 +94,14 @@ const appendShopsTable = () => {
 
 const appendShopToTable = (shop) => {
     let table = document.getElementById('shops-table');
+    let url = 'http://localhost:8080/admin/shop-manage/' + shop.id;
 
     table.innerHTML = table.innerHTML +
         `<tr>
         <td class="right-content id-text">${shop.id}</td>
         <td class="left-content left-inner-space">${shop.name}</td>
         <td class="right-content">
-          <td> <a href="">Details</a></td>
+          <td> <a target="_blank" href="${url}">Details</a></td>
           <td><button class="shop-edit-btn" shopid="${shop.id}">Edit</button></td>
           <td><button class="shop-delete-btn" shopid="${shop.id}">Delete</button></td>
         </td>
