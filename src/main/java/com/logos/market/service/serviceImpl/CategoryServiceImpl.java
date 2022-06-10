@@ -17,6 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     private CategoryRepository categoryRepository;
 
+    @Autowired
     private ShopService shopService;
 
     @Autowired
@@ -43,21 +44,21 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<Category> getAllCategoriesByShopId(Long id) {
-        try{
-            System.out.println(" shop: " + shopService.getById(id));
-        }catch (Exception e){
-            System.out.println("shop");
-            System.out.println(shopService.getById(1L));
-        }
 //        try{
-//            System.out.println("list" + categoryRepository.getAllByShops(shopService.getById(id)));
+//            System.out.println(" shop: " + shopService.getById(id));
 //        }catch (Exception e){
-//            System.out.println("list");
+//            System.out.println("shop");
+//            System.out.println(shopService.getById(1L));
 //        }
+////        try{
+////            System.out.println("list" + categoryRepository.getAllByShops(shopService.getById(id)));
+////        }catch (Exception e){
+////            System.out.println("list");
+////        }
 //
 
 
-        return List.of(new Category());
+        return categoryRepository.getAllByShops(shopService.getById(id));
     }
 
     private Category mapCategoryRequestDTOToCategory(CategoryRequestDTO categoryRequestDTO) {

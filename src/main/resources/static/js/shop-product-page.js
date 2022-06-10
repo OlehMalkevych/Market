@@ -1,7 +1,6 @@
-import {httpGet, httpDelete, httpPut, httpPost} from './tools/http-tools.js'
+import {httpGet, httpPut} from './tools/http-tools.js'
 import {appendHeader} from './headerAndFoter/header.js'
 import {appendFooter} from './headerAndFoter/footer.js'
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -9,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         appendFooter().then(f => {
             loadShop();
             loadItems();
+            sendItemToCart();
+
             // nextPageButtonOnClick();
             // prevPageButtonOnClick();
             // sortingSelectOnChange();
@@ -72,6 +73,7 @@ const loadShop = () => {
                 `
                 clickOnExitLink();
 
+
             } else {
 
                 let authorizationContainer = document.getElementById('user-authorization-container');
@@ -114,13 +116,15 @@ const appendShopData = () => {
     const shopCategoriesContainer = document.getElementById('category-container');
     shopCategoriesContainer.innerHTML = '';
 
-    if (shop.categories && shop.categories.length > 0) {
-        for (let category of shop.categories) {
+    let request = httpGet("http://localhost:8080/categories/" + getShopId());
+
+    if (request.status === 200){
+        let categories = JSON.parse(request.response);
+        console.log(categories);
+        for (let category of categories){
             shopCategoriesContainer.innerHTML = shopCategoriesContainer.innerHTML
                 + `<li><a href="#">${category.name}</a></li>`;
         }
-    } else {
-        shopCategoriesContainer.innerHTML = `<span>Categories list is empty</span>`;
     }
 }
 
@@ -202,7 +206,6 @@ const insertItemToContainer = (item) => {
     let container = document.getElementById('items-container');
     let imageUrl = item.image ? 'http://localhost:8080/image/' + item.image : 'https://cdn3.vectorstock.com/i/1000x1000/21/87/blank-item-icon-template-with-red-big-sale-top-vector-32662187.jpg';
     
-    let url = 'http://localhost:8080/cart/add-item' + JSON.stringify();
 
     container.innerHTML = container.innerHTML +
         `
@@ -214,12 +217,30 @@ const insertItemToContainer = (item) => {
             <div>${item.name}</div>
             <div>${item.price}₴</div>
         </div>
-        <div><a href="${url}"><button itemid="${item.id}">Add to Cart</button></a></div>
+        <div><button href="#" class="pushItemToCartButton" id="pushItemToCart" itemid="${item.id}">Add to Cart</button></div>
        </div>
         
         `
 }
 
 const sendItemToCart = () => {
+    let itemButton = document.getElementsByClassName('pushItemToCartButton');
 
+
+    for (let i = 0; i < itemButton.length; i++) {
+        let button = itemButton[i];
+        let itemId = button.getAttribute('itemid');
+
+
+        console.log('item not pushed');
+
+        button.onclick = () => {
+
+            let id = localStorage.getItem('user_id');
+
+            httpPut('http://localhost:8080/carts/add-item?id=' + id + '&itemId=' + itemId);
+            console.log('item pushed');
+
+        }
+    }
 }
