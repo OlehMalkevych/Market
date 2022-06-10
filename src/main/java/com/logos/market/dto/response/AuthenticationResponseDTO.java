@@ -3,7 +3,6 @@ package com.logos.market.dto.response;
 import lombok.Getter;
 import lombok.Setter;
 
-// TODO 13
 @Getter
 @Setter
 public class AuthenticationResponseDTO {

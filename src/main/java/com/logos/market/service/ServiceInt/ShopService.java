@@ -1,6 +1,7 @@
 package com.logos.market.service.ServiceInt;
 
 
+import com.logos.market.domain.Category;
 import com.logos.market.domain.Shop;
 import com.logos.market.dto.request.PaginationRequestDTO;
 import com.logos.market.dto.request.ShopRequestDTO;

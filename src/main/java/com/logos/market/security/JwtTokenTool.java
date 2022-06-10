@@ -20,7 +20,6 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.Date;
 
-//TODO 7
 @Component
 public class JwtTokenTool {
 

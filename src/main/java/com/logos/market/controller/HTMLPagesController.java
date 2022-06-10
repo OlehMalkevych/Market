@@ -14,24 +14,29 @@ public class HTMLPagesController {
 		return "/html/index.html";
 	}
 
+	@RequestMapping("/shopItems/{id}")
+	private String getShopProductPage(){
+		return "/html/shop-product-page.html";
+	}
+
 	@RequestMapping("/admin/shop")
 	private String getAdminShopPage(){
-		return "/html/admin-shop.html";
+		return "/html/admin/admin-shop.html";
 	}
 
 	@RequestMapping("/admin/shop-manage")
 	private String getAdminShopManagePage() {
-		return "/html/admin-shop-manage.html";
+		return "/html/admin/admin-shop-manage.html";
 	}
 
-	@RequestMapping("/registration")
+	@RequestMapping("/authorization")
 	private String getUserRegistrationPage() {
-		return "/html/user-registration.html";
+		return "/html/authorization.html";
 	}
-
-	@RequestMapping("/login")
-	private String getLoginPage() {
-		return "/html/login.html";
-	}
+//
+//	@RequestMapping("/login")
+//	private String getLoginPage() {
+//		return "/html/login.html";
+//	}
 
 }

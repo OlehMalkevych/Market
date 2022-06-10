@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-//TODO 9
+
 public class JwtTokenFilter extends GenericFilterBean {
 
 	private JwtTokenTool jwtTokenTool;

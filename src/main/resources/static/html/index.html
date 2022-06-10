@@ -4,284 +4,29 @@
 <title>Market</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="aStar Fashion Template Project">
+<meta name="description" content="Market">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../styles/bootstrap-4.1.3/bootstrap.css">
 <link href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="../styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="../styles/main/main_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/main/responsive.css">
 </head>
 <body>
 
 <div class="super_container">
 
-	<!-- Header -->
-
-	<header class="header">
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			
-			<!-- Hamburger -->
-			<div class="hamburger menu_mm"><i class="fa fa-bars menu_mm" aria-hidden="true"></i></div>
-
-			<!-- Logo -->
-			<div class="header_logo">
-				<a href="#"><div><span>Market</span></div></a>
-			</div>
-
-			<!-- Navigation -->
-			<nav class="header_nav">
-				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Головна</a></li>
-					<li><a href="#">Компютери</a></li>
-					<li><a href="#">Телефони</a></li>
-					<li><a href="#">Наушники</a></li>
-					<li><a href="#">Акустика</a></li>
-					<li><a href="#">Аксесуари</a></li>
-				</ul>
-			</nav>
-
-			<!-- Header Extra -->
-			<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
-
-				<!-- Cart -->
-				<div class="cart d-flex flex-row align-items-center justify-content-start">
-					<div class="cart_icon"><a href="cart.html">
-						<img src="../images/bag.png" alt="">
-						<div class="cart_num">2</div>
-					</a></div>
-				</div>
-
-			</div>
-
-		</div>
-	</header>
-
-	<!-- Menu -->
-
-	<div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
-		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-	
-		<div class="menu_search">
-			<form action="#" class="header_search_form menu_mm">
-				<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-				<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
-				</button>
-			</form>
-		</div>
-		<nav class="menu_nav">
-			<ul class="menu_mm">
-				<li><a href="index.html">Головна</a></li>
-					<li><a href="#">Компютери<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Телефони<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Наушники<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Акустика<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Аксесуари<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</nav>
-		<div class="menu_extra">
-			<div class="menu_social">
-				<ul>
-					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Sidebar -->
-
-	<div class="sidebar">
-		<!-- Logo -->
-		<div class="sidebar_logo">
-			<a href="#"><div><span>Market</span></div></a>
-		</div>
-
-		<!-- Sidebar Navigation -->
-		<nav class="sidebar_nav">
-			<ul>
-					<li><a href="index.html">Головна</a></li>
-					<li><a href="#">Компютери<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Телефони<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Наушники<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Акустика<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="#">Аксесуари<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</nav>
-
-		<!-- Search -->
-		<div class="search">
-			<form action="#" class="search_form" id="sidebar_search_form">
-				<input type="text" class="search_input" placeholder="Search" required="required">
-				<button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-			</form>
-		</div>
-
-		<!-- Cart -->
-		<div class="cart d-flex flex-row align-items-center justify-content-start">
-			<div class="cart_icon"><a href="cart.html">
-				<img src="../images/bag.png" alt="">
-				<div class="cart_num">0</div>
-			</a></div>
-			<div class="cart_text">bag</div>
-			<div class="cart_price">0</div>
-		</div>
-	</div>
-
 	<!-- Shops-Home -->
 	<div class="home">
-		<a href="cart.html">Tick</a>
+
+		<div id="shops-container" class="flex-container plates-holder">
+
+		</div>
 	</div>
-
-	<!-- Products -->
-<!-- 
-	<div class="products">
-		<div class="section_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="products_container grid">
-							
-							  //Product//comment
-							<div class="product grid-item hot">
-								<div class="product_inner">
-									<div class="product_image">
-										<img src="images/product_1.jpg" alt="">
-										<div class="product_tag">hot</div>
-									</div>
-									<div class="product_content text-center">
-										<div class="product_title"><a href="product.html">long red shirt</a></div>
-										<div class="product_price">$39.90</div>
-										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
-									</div>
-								</div>	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	
-
-	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="footer_content">
-			<div class="section_container">
-				<div class="container">
-					<div class="row">
-						
-						<!-- About -->
-						<div class="col-xxl-3 col-md-6 footer_col">
-							<div class="footer_about">
-								<!-- Logo -->
-								<div class="footer_logo">
-									<a href="#"><div><span>Market</span></div></a>
-								</div>
-								<div class="footer_about_text">
-									<p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-								</div>
-								<div class="cards">
-									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="#"><img src="../images/card_1.jpg" alt=""></a></li>
-										<li><a href="#"><img src="../images/card_2.jpg" alt=""></a></li>
-										<li><a href="#"><img src="../images/card_3.jpg" alt=""></a></li>
-										<li><a href="#"><img src="../images/card_4.jpg" alt=""></a></li>
-										<li><a href="#"><img src="../images/card_5.jpg" alt=""></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- Contact -->
-						<div class="col-xxl-3 col-md-6 footer_col">
-							<div class="footer_contact">
-								<div class="footer_title">contact</div>
-								<div class="footer_contact_list">
-									<ul>
-										<li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Market</div></li>
-										<li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>1481 Ukraine Lviv Center, CA 93424, P.O. BOX 68</div></li>
-										<li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+38 067 487 78 08</div></li>
-										<li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>market@gmail.com</div></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Social -->
-		<div class="footer_social">
-			<div class="section_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="footer_social_container d-flex flex-row align-items-center justify-content-between">
-								<!-- Instagram -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-										<div class="footer_social_title">instagram</div>
-									</div>
-								</a>
-								<!-- Google + -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
-										<div class="footer_social_title">google +</div>
-									</div>
-								</a>
-								<!-- Pinterest -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-pinterest" aria-hidden="true"></i></div>
-										<div class="footer_social_title">pinterest</div>
-									</div>
-								</a>
-								<!-- Facebook -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-										<div class="footer_social_title">facebook</div>
-									</div>
-								</a>
-								<!-- Twitter -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-										<div class="footer_social_title">twitter</div>
-									</div>
-								</a>
-								<!-- YouTube -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-youtube" aria-hidden="true"></i></div>
-										<div class="footer_social_title">youtube</div>
-									</div>
-								</a>
-								<!-- Tumblr -->
-								<a href="#">
-									<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
-										<div class="footer_social_icon"><i class="fa fa-tumblr-square" aria-hidden="true"></i></div>
-										<div class="footer_social_title">tumblr</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>				
-		</div>
-	</footer>
 
 </div>
 
-<!--<script src="../js/jquery-3.2.1.min.js"></script>-->
-<!--<script src="../js/custom.js"></script>-->
+<script type="module" src="../js/main.js"></script>
+
 
 </body>
 </html>

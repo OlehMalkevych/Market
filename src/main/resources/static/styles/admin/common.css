@@ -181,9 +181,11 @@ button {
 
 .half-section:first-child {
     margin-left: 30px;
+    width: 65%;
 }
 
 .half-section:last-child {
+    width: 25%;
     margin-right: 30px;
 }
 
@@ -214,6 +216,9 @@ button {
 
 .left-inner-space {
     padding-left: 10px;
+}
+.description-content{
+    width: 400px;
 }
 
 .left-space {
@@ -312,4 +317,9 @@ button {
 .shop-plate-name {
     text-align: center;
     font-size: 17px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
 }

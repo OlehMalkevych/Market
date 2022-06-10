@@ -20,6 +20,8 @@ public class ItemResponseDTO {
 
     private String description;
 
+    private String image;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy HH:MM")
     private LocalDateTime creationDate;
 
@@ -30,5 +32,6 @@ public class ItemResponseDTO {
         this.count = item.getCount();
         this.description = item.getDescription();
         this.creationDate = item.getCreationDate();
+        this.image = item.getImage();
     }
 }

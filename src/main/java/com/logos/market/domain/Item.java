@@ -26,6 +26,8 @@ public class Item {
 
     private String description;
 
+    private String image;
+
     private LocalDateTime creationDate = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY)

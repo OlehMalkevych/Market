@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop manage</title>
+    <link rel="stylesheet" href="../../styles/admin/common.css">
+    <link rel="stylesheet" href="../../styles/admin/admin-shop-manage.css">
+    <link rel="stylesheet" href="../../styles/admin/modal.css">
+</head>
+<body>
+<div id="modal-holder"></div>
+<div class="content-container flex-container horizontal-space-between">
+    <div>
+        <label class="section-header shop-name-header" id="shop-name-label"></label>
+    </div>
+    <div class="flex-container vertical-center">
+        <div id="shop-categories-container"></div>
+        <button id="open-categories-modal" class="edit-btn">Edit categories</button>
+    </div>
+
+</div>
+<div class="flex-container">
+    <div class="half-section content-container">
+        <div class="section-element flex-container vertical-center horizontal-center" id="page-navigation-container">
+            <button class="dark-btn page-btn" id="prev-page-button"><</button>
+            <label id="page-number-label" class="">0</label>
+            <button class="dark-btn page-btn" id="next-page-button">></button>
+                        <select class="hor-space" id="sort-field-select">
+                            <option selected value="&pagination.field=name&pagination.direction=ASC">Name (A-Z)</option>
+                            <option value="&pagination.field=name&pagination.direction=DESC">Name (Z-A)</option>
+                            <option value="&pagination.field=price&pagination.direction=ASC">Price (from less to bigger)</option>
+                            <option value="&pagination.field=price&pagination.direction=DESC">Price (from bigger to less)</option>
+                            <option selected value="">default</option>
+
+                        </select>
+        </div>
+        <div class="section-element" id="items-container">
+
+        </div>
+    </div>
+    <div class="half-section content-container">
+        <div class="section-header">
+            Add new item
+        </div>
+        <div>
+            <div>
+                <input type="text" id="item-name-input" placeholder="item name">
+            </div>
+            <div>
+                <input type="number" id="item-price-input" placeholder="item price">
+            </div>
+            <div>
+                <input type="number" id="item-count-input" placeholder="item count">
+            </div>
+            <div>
+                <textarea id="item-description-input" name="" id="" cols="30" rows="10"
+                          placeholder="item description"></textarea>
+            </div>
+            <div>
+                <input type="file" id="item-image-input" hidden>
+                <button class="btn create-btn ver-space" id="add-image-button">Add image</button>
+                <img src="" alt="" id="image-preview" hidden>
+            </div>
+            <div>
+                <button id="create-item-button" class="create-btn">
+                    Create
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script type="module" src="../../js/admin/admin-shop-manage.js"></script>
+</html>

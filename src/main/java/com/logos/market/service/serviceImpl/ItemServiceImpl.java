@@ -7,10 +7,12 @@ import com.logos.market.repository.ItemRepository;
 import com.logos.market.service.ServiceInt.ItemService;
 import com.logos.market.service.ServiceInt.ShopService;
 import com.logos.market.specification.ItemSpecification;
+import com.logos.market.tools.FileTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -21,8 +23,11 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private ShopService shopService;
 
+    @Autowired
+    private FileTool fileTool;
+
     @Override
-    public void save(ItemRequestDTO itemRequest) {
+    public void save(ItemRequestDTO itemRequest) throws IOException {
         itemRepository.save(mapItemRequestToItem(itemRequest, null));
     }
 
@@ -38,6 +43,11 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public List<Item> getAllByShopId(Long id) {
+        return itemRepository.getAllByShop(shopService.getById(id));
+    }
+
+    @Override
     public Page<Item> getPageByShopId(ItemSearchRequestDTO searchRequestDTO) {
         return itemRepository
                 .findAll(new ItemSpecification(searchRequestDTO),
@@ -45,7 +55,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item update(ItemRequestDTO itemRequest, Long id) {
+    public Item update(ItemRequestDTO itemRequest, Long id) throws IOException {
         return itemRepository.save(mapItemRequestToItem(itemRequest, getById(id)));
     }
 
@@ -53,16 +63,18 @@ public class ItemServiceImpl implements ItemService {
     public void delete(Long id) {
         itemRepository.deleteById(id);
     }
-    private Item mapItemRequestToItem(ItemRequestDTO itemRequest, Item item){
+    private Item mapItemRequestToItem(ItemRequestDTO itemRequestDTO, Item item) throws IOException {
         if (item == null){
             item = new Item();
         }
-        item.setName(itemRequest.getName());
-        item.setPrice(itemRequest.getPrice());
-        item.setCount(itemRequest.getCount());
-        item.setDescription(itemRequest.getDescription());
-        item.setShop(shopService.getById(itemRequest.getShopId()));
-
+        item.setName(itemRequestDTO.getName());
+        item.setPrice(itemRequestDTO.getPrice());
+        item.setCount(itemRequestDTO.getCount());
+        item.setDescription(itemRequestDTO.getDescription());
+        item.setShop(shopService.getById(itemRequestDTO.getShopId()));
+        if (itemRequestDTO.getImage() != null){
+            item.setImage(fileTool.saveFile(itemRequestDTO.getImage()));
+        }
         return item;
     }
 }

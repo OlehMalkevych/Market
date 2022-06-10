@@ -17,4 +17,6 @@ public class ItemRequestDTO {
 
     private Long ShopId;
 
+    private String image;
+
 }

@@ -14,13 +14,13 @@ public class JwtUser implements UserDetails {
     private String login;
     private UserRole userRole;
 
-    public JwtUser(String password, String login, UserRole userRole) {
-        this.password = password;
+    public JwtUser(String login, UserRole userRole, String password) {
         this.login = login;
         this.userRole = userRole;
+        this.password = password;
     }
 
-    //TODO 5
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(userRole.name()));
@@ -31,28 +31,28 @@ public class JwtUser implements UserDetails {
         return password;
     }
 
-    @Override
+    @Override // OUR LOGIN IS SPRING`S USERNAME!!!!!!!!
     public String getUsername() {
         return login;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

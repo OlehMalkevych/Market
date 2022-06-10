@@ -1,10 +1,21 @@
-import {httpPost, httpPut, httpGet, httpDelete} from './http-tools.js'
+import {httpPost, httpPut, httpGet, httpDelete} from '../tools/http-tools.js'
 let shopList = {};
 
 document.addEventListener('DOMContentLoaded', function(){
     loadShops();
     setCreateShopButtonOnClick();
 });
+
+
+const loadShops = () => {
+    let request = httpGet("http://localhost:8080/shops");
+
+    let response = JSON.parse(request.response);
+    console.log(response);
+    if (request.status === 200) {
+        mapShopsFromResponse(response);
+    }
+}
 
 const setCreateShopButtonOnClick = () => {
     let button = document.getElementById('create-shop-button');
@@ -37,18 +48,7 @@ const setCreateShopButtonOnClick = () => {
             }
 
 
-
         }
-    }
-}
-
-const loadShops = () => {
-    let request = httpGet("http://localhost:8080/shops");
-
-    let response = JSON.parse(request.response);
-    console.log(response);
-    if (request.status === 200) {
-        mapShopsFromResponse(response);
     }
 }
 
@@ -132,7 +132,7 @@ const addOnClickActionDeleteButtons = () => {
         let shopId = button.getAttribute('shopid');
 
         button.onclick = () => {
-           let request = httpDelete("http://localhost:8080/shops/" + shopId);
+            let request = httpDelete("http://localhost:8080/shops/" + shopId);
             if (request.status === 200) {
                 delete shopList[shopId];
                 mapShopsFromList()
@@ -141,4 +141,3 @@ const addOnClickActionDeleteButtons = () => {
 
     }
 }
-
