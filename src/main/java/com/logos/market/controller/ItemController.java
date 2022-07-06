@@ -28,12 +28,6 @@ public class ItemController {
 	@Autowired
 	private FileTool fileTool;
 
-//	@PostMapping("/image")
-//	private String saveImage(@RequestBody String image) throws IOException {
-//		return fileTool.saveFile(image);
-//	}
-
-	// CRUD - create read update delete
 	@PostMapping
 	private void createItem(@RequestBody ItemRequestDTO item) throws IOException {
 		itemService.save(item);

@@ -13,13 +13,5 @@ import java.util.Set;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-//    @Query(value = "select cs.* from category_shop cs" +
-//            "    inner join _shop s on cs.shop_id = s.id ", nativeQuery = true)
-
-//    List<Category> getAllByShopCategory(Shop shop);
-
     List<Category> getAllByShops(Shop shops);
-
-
-
 }

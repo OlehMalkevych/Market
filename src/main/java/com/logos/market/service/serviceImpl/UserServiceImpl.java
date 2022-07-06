@@ -24,8 +24,6 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
-
-    //TODO 14
     private AuthenticationManager authenticationManager;
 
     private JwtTokenTool jwtTokenTool;
@@ -44,7 +42,6 @@ public class UserServiceImpl implements UserService {
         this.encoder = encoder;
     }
 
-    // TODO 15
     @Override
     public AuthenticationResponseDTO registerUser(UserRegistrationRequestDTO request) {
         if (userRepository.existsByLogin(request.getLogin())) {
@@ -63,7 +60,6 @@ public class UserServiceImpl implements UserService {
         return login(mapRegistrationToLogin(request));
     }
 
-    // TODO 16
     @Override
     public AuthenticationResponseDTO login(UserLoginRequestDTO request) {
         String login = request.getLogin();

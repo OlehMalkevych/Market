@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //				.antMatchers(HttpMethod.POST, "/users/login", "/users/register").hasAnyRole()
 //				.antMatchers(HttpMethod.GET, "/admin/shop").hasAnyRole("ADMIN")
 //				.antMatchers(HttpMethod.GET).permitAll()
-				.anyRequest().permitAll() // USER ADMIN no authorized
+				.anyRequest().permitAll()
 				.and()
 				.apply(new JwtConfigure(jwtTokenTool));
 	}

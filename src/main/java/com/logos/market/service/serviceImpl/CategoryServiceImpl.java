@@ -44,20 +44,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<Category> getAllCategoriesByShopId(Long id) {
-//        try{
-//            System.out.println(" shop: " + shopService.getById(id));
-//        }catch (Exception e){
-//            System.out.println("shop");
-//            System.out.println(shopService.getById(1L));
-//        }
-////        try{
-////            System.out.println("list" + categoryRepository.getAllByShops(shopService.getById(id)));
-////        }catch (Exception e){
-////            System.out.println("list");
-////        }
-//
-
-
         return categoryRepository.getAllByShops(shopService.getById(id));
     }
 

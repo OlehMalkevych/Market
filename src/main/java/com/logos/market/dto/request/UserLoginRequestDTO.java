@@ -12,7 +12,6 @@ import javax.validation.constraints.Size;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-// TODO 12
 public class UserLoginRequestDTO {
 
 	@NotBlank
